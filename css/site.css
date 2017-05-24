@@ -1,0 +1,49 @@
+html,
+body,
+.row,
+#mainContainer {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#mapContainer {
+    height: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+#search {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    left: 74px;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+/* Change color of icons to match bar chart and selection symbol */
+
+/*.esriPopup.dark div.titleButton,
+.esriPopup.dark div.titlePane .title,
+.esriPopup.dark div.actionsPane .action {
+    color: #A4CE67;
+}
+
+
+ Additional customizations 
+
+.esriPopup.dark .esriPopupWrapper {
+    border: none;
+}
+
+.esriPopup .contentPane {
+    text-align: center;
+}
+
+.esriViewPopup .gallery {
+    margin: 0 auto;
+}*/

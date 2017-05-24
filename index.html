@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+        <title>VEGAS - Demo</title>
+        <link rel="stylesheet" href="css/lib/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/lib/bootstrapmap.css" />
+        <link rel="stylesheet" href="http://localhost:8080/arcgis_js_api/library/3.20/3.20/esri/css/esri.css" />
+        <link rel="stylesheet" href="http://localhost:8080/library/3.20/3.20/dijit/themes/claro/claro.css" />
+        <link rel="stylesheet" type="text/css" href="css/site.css" />
+    </head>
+    <body>
+        <div class="container-fluid claro" id="mainContainer">
+            <div class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">VEGAS</a>
+                    </div>
+                    
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><button href="#">Time Aware Data</button></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Draw
+                                <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><button id="polygon" class='btn btn-default btn-block'>Polygon</button></li>
+                                    <li><button id="freehandPolygon" class='btn btn-default btn-block'>FreeHand Polygon</button></li>
+                                    <li><button id="circle" class='btn btn-default btn-block'>Circle</button></li>
+                                    <li><button id="triangle" class='btn btn-default btn-block'>Triangle</button></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Print</a></li>
+                            <li><a href="#">Share</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3" style="background-color: grey;height: 100%">
+                        <div class="row">
+                            <div class="col-sm-offset-1 col-sm-10">
+                                <br><br><br>
+                                <Button id='allLayer' class='btn btn-primary btn-block'>All</Button>
+                                <Button id='school' class='btn btn-primary btn-block'>Schools</Button>
+                                <Button id='health' class='btn btn-primary btn-block'>Health Centers</Button>
+                                <Button id='subcity' class='btn btn-primary btn-block'>Subcity</Button>
+                            </div><br><br><br><br><br>
+                        </div>
+                        <div class='row'>
+                            <div id='analysisWidgetDiv'></div>
+                        </div>
+                    </div>
+                    <div id="mapContainer" class="col-sm-9">
+                        <div id="search"></div>
+                        <div id="legendPane">
+                            <div id="legendDiv"></div>
+                        </div>
+                        <div id="mapDiv"></div>
+                    </div>
+                </div>
+            </div>
+            <script>
+            var dojoConfig = {
+            has: {
+            "dojo-debug-messages": true
+            },
+            parseOnLoad: false,
+            locale: 'en-us',
+            async: true,
+            cahceBust: true,
+            packages: [{
+            name: 'appWidgets',
+            location: '/VEGASDemo/js/widgets'
+            }, {
+            name: 'app',
+            location: '/VEGASDemo/js'
+            },{
+            name: 'utils',
+            location: '/VEGASDemo/js/utils'
+            }]
+            }
+            </script>
+            <script type="text/javascript" src="js/lib/jquery.min.js"></script>
+            <script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
+            <script src="http://localhost:8080/arcgis_js_api/library/3.20/3.20/init.js"></script>
+            <script type="text/javascript" src="js/app.js"></script>
+        </body>
+    </html>
