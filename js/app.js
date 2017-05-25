@@ -306,10 +306,16 @@ require([
                     $(this).closest('.panel')[effect]();
                 });
                 //click event listner for legend link from the navbar
+                $("#analysisMenuItem").click(
+                    function () {
+                        $('#analysisWidgetDiv').toggle('slow');
+                    }
+                );
+                //click event listner for legend link from the navbar
                 $('#legendMenuItem').click(
                     function (event) {
                         console.log('Legend');
-                        $('.panelCon').toggle('slow');
+                        $('#legendPanel').toggle('slow');
                     });
                 var legendParams = {
                         map: map

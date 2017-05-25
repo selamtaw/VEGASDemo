@@ -26,29 +26,48 @@ body,
 }
 
 .clickable {
-	background: rgba(0, 0, 0, 0.15);
-	display: inline-block;
-	padding: 6px 12px;
-	border-radius: 4px;
-	cursor: pointer;
-}
-.panel-heading span {
-	margin-top: -7px;
-	font-size: 15px;
-	margin-right: -12px;
-}
-.panelCon {
-	position: absolute;
-	z-index: 1;
-	display: none;
-	opacity: 0;
-	left: 60px;
-	bottom: 0px;
-	width: 820px;
-	height: 250px;
+    background: rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
+.panel-heading span {
+    margin-top: -7px;
+    font-size: 15px;
+    margin-right: -12px;
+}
+
+#legendPanel {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    opacity: 1;
+    left: auto;
+    right: 60px;
+    bottom: auto;
+    top: 60px;
+    width: 250px;
+    height: 550px;
+}
+
+#analysisWidgetDiv {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    opacity: 1;
+    left: 10%;
+    right: auto;
+    bottom: 0px;
+    top: auto;
+    width: 80%;
+    height: 250px;
+}
+
+
 /* Change color of icons to match bar chart and selection symbol */
+
 
 /*.esriPopup.dark div.titleButton,
 .esriPopup.dark div.titlePane .title,
