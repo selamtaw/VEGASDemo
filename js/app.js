@@ -30,7 +30,7 @@ require([
 
         'dojo/domReady!'
     ],
-    function(
+    function (
         MapAnalysis,
         addisInfo,
 
@@ -92,8 +92,8 @@ require([
         });
 
         //add the legend
-        map.on("layers-add-result", function(evt) {
-            var layerInfo = arrayUtils.map(evt.layers, function(layer, index) {
+        map.on("layers-add-result", function (evt) {
+            var layerInfo = arrayUtils.map(evt.layers, function (layer, index) {
                 return {
                     layer: layer.layer,
                     title: layer.layer.name
@@ -206,21 +206,21 @@ require([
 
         search.set("sources", sources);
         search.startup();
-        on(search, 'search-results', function(e) {
+        on(search, 'search-results', function (e) {
             showResults(e);
         });
 
         //Holds currently selected layer id
         var activeLayerId = null;
         //Listen to All layer button click event
-        on(dom.byId('allLayer'), 'click', function() {
+        on(dom.byId('allLayer'), 'click', function () {
             map.addLayer(schoolLayer);
             map.addLayer(healthCenterLayer);
             activeLayerId = null;
             map.graphics.clear();
         });
         //Listen to the school layer click button
-        on(dom.byId('school'), 'click', function() {
+        on(dom.byId('school'), 'click', function () {
             map.removeLayer(healthCenterLayer);
             map.addLayer(schoolLayer);
             activeLayerId = 1;
@@ -228,7 +228,7 @@ require([
         });
 
         //Listen to the health layer click button
-        on(dom.byId('health'), 'click', function() {
+        on(dom.byId('health'), 'click', function () {
             map.removeLayer(schoolLayer);
             map.addLayer(healthCenterLayer);
             activeLayerId = 0;
@@ -236,7 +236,7 @@ require([
         });
 
         //Listen to the addis ababa subcity layer click button
-        on(dom.byId('subcity'), 'click', function() {
+        on(dom.byId('subcity'), 'click', function () {
             map.removeLayer(healthCenterLayer);
             map.removeLayer(schoolLayer);
             map.addLayer(addisAbabaLayer);
@@ -266,7 +266,7 @@ require([
 
             console.log(featureArray[1]);
 
-            featureArray[1].forEach(function(element) {
+            featureArray[1].forEach(function (element) {
                 console.log(element)
                 var feature = element.feature;
                 feature.setSymbol(symbol);
@@ -275,7 +275,7 @@ require([
 
             }, this);
 
-            featureArray[2].forEach(function(element) {
+            featureArray[2].forEach(function (element) {
                 console.log(element)
                 var feature = element.feature;
                 feature.setSymbol(symbol);

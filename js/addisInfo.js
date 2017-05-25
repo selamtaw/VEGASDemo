@@ -32,7 +32,7 @@ define(
         'dojo/domReady!'
     ],
 
-    function(
+    function (
         dom,
         domClass,
         domConstruct,
@@ -41,7 +41,7 @@ define(
         number,
         array,
         domstyle,
-        
+
         Chart2D,
         Pie,
         Bahamation,
@@ -61,7 +61,7 @@ define(
         ContentPane,
         BorderContainer) {
         return {
-            getInfoWindowContent: function(graphic) {
+            getInfoWindowContent: function (graphic) {
                 console.log("Content setted.");
                 //Contain the two ContentPane's 
                 var infoWindowTC = new TabContainer({
@@ -94,7 +94,7 @@ define(
                     radius: 70,
                     htmlLabels: true
                 });
-                infoWindowTC.watch("selectedChildWidget", function(name, oldVal, newVal) {
+                infoWindowTC.watch("selectedChildWidget", function (name, oldVal, newVal) {
                     if (newVal.title === "Pie Chart") {
                         chart.resize(200, 200);
                     }
@@ -115,7 +115,7 @@ define(
                 var chartFields = [male, female];
                 var chartSeriesArray = [];
 
-                array.forEach(chartFields, function(chartField) {
+                array.forEach(chartFields, function (chartField) {
                     var chartObject = {
                         y: chartField.value,
                         tooltip: chartField.label + ' : ' + chartField.value + ' %',
