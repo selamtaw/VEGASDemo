@@ -27,6 +27,7 @@ require([
         'esri/dijit/Popup',
         'esri/dijit/PopupTemplate',
         'esri/dijit/Legend',
+        'esri/dijit/Scalebar',
 
         'dojo/domReady!'
     ],
@@ -57,7 +58,8 @@ require([
         Search,
         Popup,
         PopupTemplate,
-        Legend
+        Legend,
+        Scalebar
     ) {
         'use strict';
         //Initialize the analysis widget
@@ -90,7 +92,11 @@ require([
             extent: initialExtent,
             infoWindow: popup
         });
-
+        //Add a scale bar to the map
+        var scaleBar = new Scalebar({
+            map: map,
+            scalebarUnit: 'metric'
+        });
         //add the legend
         map.on("layers-add-result", function (evt) {
             var layerInfo = arrayUtils.map(evt.layers, function (layer, index) {
