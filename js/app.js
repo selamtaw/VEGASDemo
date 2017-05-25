@@ -291,4 +291,31 @@ require([
             }, this);
 
         }
+
+        //Event lister to nav links
+        $(document).ready(
+            function () {
+                //listner to drawMenuItems menu
+                $('#drawMenuItems li').click(
+                    function (event) {
+
+                    }
+                );
+                $('.clickable').on('click', function () {
+                    var effect = $(this).data('effect');
+                    $(this).closest('.panel')[effect]();
+                });
+                //click event listner for legend link from the navbar
+                $('#legendMenuItem').click(
+                    function (event) {
+                        console.log('Legend');
+                        $('.panelCon').toggle('slow');
+                    });
+                var legendParams = {
+                        map: map
+                    },
+                    legend = new Legend(legendParams, 'legend');
+                legend.startup();
+            }
+        );
     });

@@ -7,6 +7,7 @@
     <title>VEGAS - Demo</title>
     <link rel="stylesheet" href="css/lib/bootstrap.min.css" />
     <link rel="stylesheet" href="css/lib/bootstrapmap.css" />
+    <link rel="stylesheet" href="css/lib/font-awesome.min.css" />
     <link rel="stylesheet" href="http://localhost:8080/arcgis_js_api/library/3.20/3.20/esri/css/esri.css" />
     <link rel="stylesheet" href="http://localhost:8080/arcgis_js_api/library/3.20/3.20/dijit/themes/claro/claro.css" />
     <link rel="stylesheet" type="text/css" href="css/site.css" />
@@ -14,6 +15,17 @@
 
 <body>
     <div class="container-fluid claro" id="mainContainer">
+        <!--legend div-->
+        <div class="panel panel-default panelCon" style="display:block;opacity:1;left:auto;right: 60px;bottom:auto;top:60px;width:350px;height: 550px;">
+            <div class="panel-heading">
+                <span class="panel-titletext">Legend</span>
+                <span class="pull-right clickable" data-effect="slideUp"><i class="fa fa-times"></i></span>
+            </div>
+            <div class="panel-body" style="width: 349px; height: 500px;overflow-y: scroll;">
+                <div id="legend"></div>
+            </div>
+        </div>
+
         <div class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -21,19 +33,20 @@
                 </div>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><button href="#">Time Aware Data</button></li>
-                    <li class="dropdown">
+                    <li id="timeAwareData"><a href="#">Time Aware Data</a></li>
+                    <li id="drawMenuItems" class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Draw
                                 <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><button id="polygon" class='btn btn-default btn-block'>Polygon</button></li>
-                            <li><button id="freehandPolygon" class='btn btn-default btn-block'>FreeHand Polygon</button></li>
-                            <li><button id="circle" class='btn btn-default btn-block'>Circle</button></li>
-                            <li><button id="triangle" class='btn btn-default btn-block'>Triangle</button></li>
+                            <li><a id="polygon">Polygon</a></li>
+                            <li><a id="freehandPolygon">FreeHand Polygon</a></li>
+                            <li><a id="circle">Circle</a></li>
+                            <li><a id="triangle">Triangle</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Print</a></li>
-                    <li><a href="#">Share</a></li>
+                    <li id="legendMenuItem"><a href="#">Legend</a></li>
+                    <li id="printMenuItem"><a href="#">Print</a></li>
+                    <li id="shareMenuItem"><a href="#">Share</a></li>
                 </ul>
             </div>
         </div>
