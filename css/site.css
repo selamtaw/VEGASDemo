@@ -55,7 +55,7 @@ body,
 #analysisWidgetDiv {
     position: absolute;
     z-index: 1;
-    display: block;
+    display: none;
     opacity: 1;
     left: 10%;
     right: auto;

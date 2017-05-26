@@ -85,9 +85,6 @@ require([
             titleInBody: false,
         }, domConstruct.create("div"));
 
-        //Add the dark theme which is customized further in the <style> tag at the top of this page
-        //domClass.add(popup.domNode, "dark");
-
         map = new Map("mapDiv", {
             extent: initialExtent,
             infoWindow: popup
@@ -96,22 +93,6 @@ require([
         var scaleBar = new Scalebar({
             map: map,
             scalebarUnit: 'metric'
-        });
-        //add the legend
-        map.on("layers-add-result", function (evt) {
-            var layerInfo = arrayUtils.map(evt.layers, function (layer, index) {
-                return {
-                    layer: layer.layer,
-                    title: layer.layer.name
-                };
-            });
-            if (layerInfo.length > 0) {
-                var legendDijit = new Legend({
-                    map: map,
-                    layerInfos: layerInfo
-                }, "legendDiv");
-                legendDijit.startup();
-            }
         });
 
         map.infoWindow.resize(300, 300);

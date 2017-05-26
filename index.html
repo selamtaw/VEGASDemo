@@ -19,22 +19,29 @@
         <div id="legendPanel" class="panel panel-default panelCon">
             <div class="panel-heading">
                 <span class="panel-titletext">Legend</span>
-                <span class="pull-right clickable" data-effect="slideUp"><i class="fa fa-times"></i></span>
+                <span class="pull-right clickable" data-effect="slideUp">
+                    <i class="fa fa-times"></i>
+                </span>
             </div>
             <div class="panel-body">
                 <div id="legend"></div>
             </div>
         </div>
-
+        <!--Analysis result panel-->
         <div id='analysisWidgetDiv' class='panel panel-default panelCon'>
             <div class="panel-heading">
                 <span class="panel-titletext">Analysis Result</span>
-                <span class="pull-right clickable" data-effect="slideUp"><i class="fa fa-times"></i></span>
+                <span class="pull-right clickable" data-effect="slideUp">
+                    <i class="fa fa-times"></i>
+                </span>
             </div>
             <div class="panel-box">
-                <div id="analysisResult"></div>
+                <div id="analysisResult">
+                    <h3 class="well">No result</h3>
+                </div>
             </div>
         </div>
+        <!--Nav bar menu-->
         <div class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -58,36 +65,59 @@
                                 <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li id="legendMenuItem"><a href="#">Legend</a></li>
-                            <li id="analysisMenuItem" href="#"><a>Analysis</a></li>
+                            <li id="analysisMenuItem"><a href="#">Analysis</a></li>
 
                         </ul>
                     </li>
-                    <li id="legendMenuItem"><a href="#">Legend</a></li>
                     <li id="printMenuItem"><a href="#">Print</a></li>
                     <li id="shareMenuItem"><a href="#">Share</a></li>
                 </ul>
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-3" style="background-color: grey;height: 100%">
-                <div class="row">
-                    <div class="col-sm-offset-1 col-sm-10">
-                        <br><br><br>
-                        <Button id='allLayer' class='btn btn-primary btn-block'>All</Button>
-                        <Button id='school' class='btn btn-primary btn-block'>Schools</Button>
-                        <Button id='health' class='btn btn-primary btn-block'>Health Centers</Button>
-                        <Button id='subcity' class='btn btn-primary btn-block'>Subcity</Button>
-                        <Button id='population' class='btn btn-primary btn-block'>Population</Button>
-                    </div><br><br><br><br><br>
+            <div class="col-sm-3" style="background-color: white;height: 100%;">
+                <br><br><br>
+                <div class="panel-group" id="asideMenu">
+                    <!--Layer list panel-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle='collapse' data-parent='#asideMenu' href="#layerListCollapse">Layer List</a>
+                            </h4>
+                        </div>
+                        <div id="layerListCollapse" class="panel-collapse collapse in">
+                            <Button id='allLayer' class='btn btn-primary btn-block'>All</Button>
+                            <Button id='school' class='btn btn-primary btn-block'>Schools</Button>
+                            <Button id='health' class='btn btn-primary btn-block'>Health Centers</Button>
+                            <Button id='subcity' class='btn btn-primary btn-block'>Subcity</Button>
+                            <Button id='population' class='btn btn-primary btn-block'>Population</Button>
+                        </div>
+                    </div>
+                    <!--Custom result menu-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle='collapse' data-parent='#asideMenu' href="#customResultCollapse">Custom Result</a>
+                            </h4>
+                        </div>
+                        <div id="customResultCollapse" class="panel-collapse collapse">
+                            <Button id='allLayer' class='btn btn-primary btn-block'>All</Button>
+                            <Button id='school' class='btn btn-primary btn-block'>Schools</Button>
+                            <Button id='health' class='btn btn-primary btn-block'>Health Centers</Button>
+                            <Button id='subcity' class='btn btn-primary btn-block'>Subcity</Button>
+                            <Button id='population' class='btn btn-primary btn-block'>Population</Button>
+                        </div>
+                    </div>
                 </div>
-
             </div>
+
             <div id="mapContainer" class="col-sm-9">
                 <div id="search"></div>
                 <div id="legendPane">
                     <div id="legendDiv"></div>
                 </div>
                 <div id="mapDiv"></div>
+                
             </div>
         </div>
     </div>
