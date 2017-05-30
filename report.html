@@ -2,56 +2,118 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-    <title>FeatureLayer</title>
-
-
-    <link rel="stylesheet" href="http://localhost:8080/arcgis_js_api/library/3.20/3.20compact/esri/css/esri.css" />
-    <script src="http://localhost:8080/arcgis_js_api/library/3.20/3.20compact/init.js"></script>
-    <style>
-        html,
-        body,
-        #map {
-            padding: 0;
-            margin: 0;
-            height: 100%;
-            width: 100%;
-        }
-
-    </style>
-
-    <script>
-        require([
-                "esri/map",
-                "esri/layers/FeatureLayer",
-                "dojo/domReady!"
-            ],
-            function(
-                Map,
-                FeatureLayer
-            ) {
-
-                var map = new Map("map");
-
-                /****************************************************************
-                 * Add feature layer - A FeatureLayer at minimum should point
-                 * to a URL to a feature service or point to a feature collection
-                 * object.
-                 ***************************************************************/
-
-                // Carbon storage of trees in Warren Wilson College.
-                var featureLayer = new FeatureLayer("http://localhost:6080/arcgis/rest/services/vegas/MapServer/3");
-
-                map.addLayer(featureLayer);
-
-            });
-
-    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+    <title>VEGAS - Demo Report</title>
+    <link rel="stylesheet" href="css/lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/lib/bootstrapmap.css" />
+    <link rel="stylesheet" href="css/lib/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/report.css" />
 </head>
 
 <body>
-    <div id="map"></div>
+    <div class="container-fluid claro" id="mainContainer">
+        <!--legend div-->
+
+        <!--Nav bar menu-->
+        <div class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">VEGAS</a>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li id="printMenuItem"><a href="index.html">Map</a></li>
+                    <li id="printMenuItem"><a href="#">Print</a></li>
+                    <li id="shareMenuItem"><a href="#">Share</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3" style="height: 100%;">
+                <br><br><br>
+                <div class="panel-group" id="asideMenu">
+                    <!--Layer list panel-->
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle='collapse' data-parent='#asideMenu' href="#layerListCollapse">Layer List</a>
+                            </h4>
+                        </div>
+                        <div id="layerListCollapse" class="panel-collapse collapse in">
+
+                            <div class="list-group">
+                                <a id='summary' class="list-group-item" href="#">Summary</a>
+                                <a id='population' class="list-group-item" href="#">Population</a>
+                                <a id='sex' class="list-group-item" href="#">Sex</a>
+                                <a id='disability' class="list-group-item" href="#">Disability</a>
+                                <a id='employment' class="list-group-item" href="#">Employment</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Custom result menu-->
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle='collapse' data-parent='#asideMenu' href="#customResultCollapse">Custom Result</a>
+                            </h4>
+                        </div>
+                        <div id="customResultCollapse" class="panel-collapse collapse ">
+                            <div class="list-group">
+                                <a id='allLayer' class="list-group-item" href="#">All</a>
+                                <a id='school' class="list-group-item" href="#">Schools</a>
+                                <a id='health' class="list-group-item" href="#">Health Centers</a>
+                                <a id='subcity' class="list-group-item" href="#">Subcity</a>
+                                <a id='population' class="list-group-item" href="#">Population</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="reportContainer" class="col-sm-9">
+
+                <div id="reportDiv">
+                    <div id="reportHeader" class=".page-header">
+                        <h3>Please, Select a template from the left panel!</h3>
+                    </div>
+                    <div id="reportBody">
+                        <div id="pieChartDiv" style="width: auto"></div>
+                        <div id="pieChartLegendDiv" style="width: auto"></div>
+                        <div id="barChartDiv" style="width: auto"></div>
+                        <div id="tableDiv" style="width: auto"></div>
+                        <div id="pieChartDiv" style="width: auto"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        var dojoConfig = {
+            has: {
+                "dojo-debug-messages": true
+            },
+            parseOnLoad: false,
+            locale: 'en-us',
+            async: true,
+            cahceBust: true,
+            packages: [{
+                name: 'appWidgets',
+                location: '/VEGASDemo/js/widgets'
+            }, {
+                name: 'app',
+                location: '/VEGASDemo/js'
+            }, {
+                name: 'utils',
+                location: '/VEGASDemo/js/utils'
+            }]
+        }
+    </script>
+    <script type="text/javascript" src="js/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
+    <script src="http://localhost:8080/arcgis_js_api/library/3.20/3.20/init.js"></script>
+    <script type="text/javascript" src="js/report.js"></script>
 </body>
 
 </html>

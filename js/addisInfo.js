@@ -9,7 +9,7 @@ define(
         'dojo/_base/array',
         'dojo/dom-style',
 
-        'dojox/charting/Chart2D',
+        'dojox/charting/Chart',
         'dojox/charting/plot2d/Pie',
         'dojox/charting/themes/Bahamation',
         "dojox/charting/action2d/Highlight",
@@ -42,7 +42,7 @@ define(
         array,
         domstyle,
 
-        Chart2D,
+        Chart,
         Pie,
         Bahamation,
         Highlight,
@@ -83,7 +83,7 @@ define(
                     id: "infoChartDiv"
                 }, domConstruct.create("div"));
 
-                var chart = new Chart2D(chartDiv);
+                var chart = new Chart(chartDiv);
                 domClass.add(chart, "chart");
 
                 // Apply a color theme to the chart.
@@ -123,7 +123,7 @@ define(
                     }
                     chartSeriesArray.push(chartObject);
                 });
-
+                
                 chart.addSeries("PopulationSplit", chartSeriesArray);
 
                 new Highlight(chart, "default");
